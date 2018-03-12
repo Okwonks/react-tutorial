@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './hello-world';
 function Square(props) {
   return (
     <button className="square" onClick={props.onClick}>
@@ -46,8 +47,8 @@ class Game extends React.Component {
     super(props);
     this.state = {
       history: [{
-          squares: Array(9).fill(null)
-        }],
+        squares: Array(9).fill(null)
+      }],
       stepNumber: 0,
       xIsNext: true
     };
@@ -63,8 +64,8 @@ class Game extends React.Component {
     squares[i] = this.state.xIsNext ? "X" : "O";
     this.setState({
       history: history.concat([{
-          squares: squares
-        }]),
+        squares: squares
+      }]),
       stepNumber: history.length,
       xIsNext: !this.state.xIsNext
     });
