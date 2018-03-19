@@ -1,3 +1,14 @@
 import React, { Component } from 'react';
-import * as hello from './hello-world';
+import UserName from './hello-world';
 
+class App extends Component {
+    render() {
+        return(
+            <div>
+                <UserName />
+            </div>
+        )
+    }
+}
+
+export default App;

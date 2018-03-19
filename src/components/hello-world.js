@@ -25,7 +25,7 @@ import ReactDOM from 'react-dom';
 //     }
 // });
 
-class ShowList extends React.Component {
+class ShowList extends Component {
     render() {
         let listItems = this.props.names.map(function (friend) {
             return <li>{friend}</li>
@@ -112,5 +112,7 @@ UserName.defaultProps = {
     username: '@albert',
     friends: ['Jake Lingwall', 'Murphy Randall', 'Merrick Christensen', 'Drake the Winstone']
 }
+
+export default UserName;
 
 ReactDOM.render(<UserName />, document.getElementById('hello-user'));
