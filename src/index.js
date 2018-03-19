@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import './hello-world';
+import './components/App';
 function Square(props) {
   return (
     <button className="square" onClick={props.onClick}>

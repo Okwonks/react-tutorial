@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 /** This is an alternative way of using classes
  *  Just in case ES6 looks difficult ;)
