@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 /** This is an alternative way of using classes
  *  Just in case ES6 looks difficult ;)
  */
@@ -27,7 +27,7 @@ import React, { Component } from 'react';
 class ShowList extends Component {
     render() {
         let listItems = this.props.names.map(function (friend) {
-            return <li>{friend}</li>
+            return <li key={friend}>{friend}</li>
         });
         return (
             <div>
@@ -64,10 +64,17 @@ class AddFriends extends Component {
     }
     render() {
         return (
-            <div>
-                <input type="text" value={this.state.newFriend} onChange={this.updateNewFriend} onKeyPress={e => {if(e.charCode === 13){this.handleAddNew()}}} />
-                <button onClick={this.handleAddNew}>Add Friend</button>
-            </div>
+            <Fragment>
+                <div className="form-inline">
+                    <div className="form-group">
+                        <label htmlFor="add friend" className="bmd-label-floating">Add Friend</label>
+                        <input className="form-control" type="text" value={this.state.newFriend} onChange={this.updateNewFriend} onKeyPress={e => { if (e.charCode === 13) { this.handleAddNew() } }} />
+                    </div>
+                    <span className="form-group bmd-form-group">
+                        <button className="btn btn-success" onClick={this.handleAddNew}>Add Friend</button>
+                    </span>
+                </div>
+            </Fragment>
         )
     }
 }
@@ -100,8 +107,13 @@ class UserName extends Component {
             <div>
                 <h3>Hello {this.state.username}</h3> <br />
                 <ShowList names={this.state.friends} />
-                Change Name: <input type="text" value={this.state.username} onChange={this.handleChange} />
-                <AddFriends addNew={this.addFriend}/>
+                <div className="form-inline">
+                    <div className="form-group">
+                        <label htmlFor="" className="bmd-label-floating">Username</label>
+                        <input className="form-control" type="text" onChange={this.handleChange} />
+                    </div>
+                    <AddFriends addNew={this.addFriend} />
+                </div>
             </div>
         )
     }

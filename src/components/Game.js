@@ -18,7 +18,7 @@ function Square(props) {
   
     render() {
       return (
-        <div>
+        <div className="container">
           <div className="board-row">
             {this.renderSquare(0)}
             {this.renderSquare(1)}
@@ -99,7 +99,7 @@ function Square(props) {
       }
   
       return (
-        <div className="game">
+        <div className="game container-fluid">
           <div className="game-board">
             <Board
               squares={current.squares}
