@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 /** This is an alternative way of using classes
  *  Just in case ES6 looks difficult ;)
  */
@@ -42,7 +41,7 @@ class ShowList extends Component {
     }
 }
 
-class AddFriends extends React.Component {
+class AddFriends extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -66,14 +65,14 @@ class AddFriends extends React.Component {
     render() {
         return (
             <div>
-                <input type="text" value={this.state.newFriend} onChange={this.updateNewFriend} />
+                <input type="text" value={this.state.newFriend} onChange={this.updateNewFriend} onKeyPress={e => {if(e.charCode === 13){this.handleAddNew()}}} />
                 <button onClick={this.handleAddNew}>Add Friend</button>
             </div>
         )
     }
 }
 
-class UserName extends React.Component {
+class UserName extends Component {
     constructor(props) {
         super(props);
         this.state = UserName.defaultProps;
@@ -114,5 +113,3 @@ UserName.defaultProps = {
 }
 
 export default UserName;
-
-ReactDOM.render(<UserName />, document.getElementById('hello-user'));
