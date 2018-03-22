@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import UserName from './hello-world';
-import Game from './Game';
 import Tutorial from './Tutorial'
+import Header from './Header'
 
 class Container extends Component {
     render() {
-        <main>
-            <Switch>
-                <Route path="/tutorial" component={Tutorial} />
-            </Switch>
-        </main>
+        return (
+            <main>
+                <Switch>
+                    <Route path="/tutorial" component={Tutorial} />
+                </Switch>
+            </main>
+        )
     }
 }
 class App extends Component {
     render() {
-        return(
-            <div className="container-fluid">
+        return (
+            <div>
+                <Header />
                 <Container />
             </div>
         )

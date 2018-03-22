@@ -1,28 +1,5 @@
 import React, { Component, Fragment } from 'react';
-/** This is an alternative way of using classes
- *  Just in case ES6 looks difficult ;)
- */
-// let createReactClass = require('create-react-class');
-// let HelloUser = createReactClass({
-//     getInitialState() {
-//         return {
-//             username: '@albert'
-//         }
-//     },
-//     handleChange(e) {
-//         this.setState({
-//             username: e.target.value
-//         });
-//     },
-//     render() {
-//         return (
-//             <div>
-//                 Hello {this.state.username} <br/>
-//                 Change Name: <input type="text" value={this.state.username} onChange={this.handleChange}/>
-//             </div>
-//         )
-//     }
-// });
+import { Input } from 'mdbreact';
 
 class ShowList extends Component {
     render() {
@@ -67,8 +44,7 @@ class AddFriends extends Component {
             <Fragment>
                 <div className="form-inline">
                     <div className="form-group">
-                        <label htmlFor="add friend" className="bmd-label-floating">Add Friend</label>
-                        <input className="form-control" type="text" value={this.state.newFriend} onChange={this.updateNewFriend} onKeyPress={e => { if (e.charCode === 13) { this.handleAddNew() } }} />
+                        <Input label="Add Friend" className="form-control" type="text" value={this.state.newFriend} onChange={this.updateNewFriend} onKeyPress={e => { if (e.charCode === 13) { this.handleAddNew() } }} />
                     </div>
                     <span className="form-group bmd-form-group">
                         <button className="btn btn-success" onClick={this.handleAddNew}>Add Friend</button>
@@ -109,8 +85,7 @@ class UserName extends Component {
                 <ShowList names={this.state.friends} />
                 <div className="form-inline">
                     <div className="form-group">
-                        <label htmlFor="" className="bmd-label-floating">Username</label>
-                        <input className="form-control" type="text" onChange={this.handleChange} />
+                        <Input label="Username" className="form-control" type="text" onChange={this.handleChange} />
                     </div>
                     <AddFriends addNew={this.addFriend} />
                 </div>
