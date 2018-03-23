@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLink } from 'mdbreact';
-import '../index.css'
 
 class Header extends Component {
     constructor(props) {
@@ -29,9 +28,6 @@ class Header extends Component {
                             </NavItem>
                             <NavItem>
                                 <NavLink className="nav-link" to="/tutorial">Features</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink className="nav-link" to="/pricing">Pricing</NavLink>
                             </NavItem>
                         </NavbarNav>
                         <NavbarNav className="ml-auto">

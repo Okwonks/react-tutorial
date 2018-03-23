@@ -80,7 +80,7 @@ class UserName extends Component {
     // }
     render() {
         return (
-            <div>
+            <div className="container-fluid">
                 <h3>Hello {this.state.username}</h3> <br />
                 <ShowList names={this.state.friends} />
                 <div className="form-inline">
