@@ -59,6 +59,10 @@ ul {
 }
 
 @media only screen and (max-width: 768px) {
+  body {
+    margin: 0.5em;
+    margin-top: 5em;
+  }
   .navbar {
     background-color: #4285F4;
   }
